@@ -118,7 +118,7 @@
     };
     "undefined" != typeof module ? module.exports = h : self.idb = h
 }();
-var urlToFetch = "https://api.github.com/repos/abhisheksoni27/abhisheksoni27.github.io/contents/";
+var urlToFetch = "https://api.github.com/repos/blanketcoffee/blanketcoffee.github.io/contents/";
 var globalPath = "_posts/featured";
 var Articles = [];
 var Images = [];
@@ -209,7 +209,7 @@ self.addEventListener('install', function(event) {
                 })
             return cache;
         }).then(cache => {
-            fetchImages(urlToFetch, "/public/images")
+            fetchImages(urlToFetch, "public/images/")
                 .then(bp => {
                     cache.addAll(Images);
                 })
