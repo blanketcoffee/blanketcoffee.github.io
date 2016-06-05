@@ -9,7 +9,7 @@ categories: featured
 
 **Here is a list of all my favourite (and oh-so relatable) quotes from the novel Paper Towns by John Green❤️**
 
-![]()
+![](https://raw.githubusercontent.com/blanketcoffee/blanketcoffee.github.io/master/public/images/margo.jpg)
 
 1. "She loved mysteries so much that she became one." (Tops the list, obviously. Jk, I like these all equally.)  
 
