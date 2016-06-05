@@ -13,13 +13,6 @@ var base_url = window.location.origin;
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register(base_url + "/sw.js", { scope: "/" })
         .then(function(response) {
-
-            response.pushManager.subscribe({
-                    userVisibleOnly: true
-                })
-                .then(function(sub) {
-                    console.log('endpoint:', sub.endpoint);
-                });
             if (response.waiting) {
                 console.log("Waiting!");
                 updateReady(response.waiting);
@@ -55,7 +48,7 @@ function trackInstalling(worker) {
 }
 
 function updateReady(worker) {
-
+if(worker.state==="active") return;
     var notification = document.querySelector('.mdl-js-snackbar');
 
     var data = {
