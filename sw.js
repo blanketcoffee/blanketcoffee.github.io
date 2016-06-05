@@ -189,7 +189,7 @@ const staticCacheName = "1";
 var staticFilesToCache = ['/public/static-945kky2j.js',
     '/public/material-static-945kky2j.min.js',
     '/public/css/material-static-945kky2j.min.css',
-    '/public/css/static-945kky2j.min.css',
+    '/public/css/static-945kky2m.min.css',
     '/send-us-a-message.html',
     '/',
     '/index.html',
