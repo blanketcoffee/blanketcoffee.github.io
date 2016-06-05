@@ -184,7 +184,7 @@ function fetchImages(urlToFetch, path1) {
     });
 }
 
-const staticCacheName = "1";
+const staticCacheName = "2";
 
 var staticFilesToCache = ['/public/static-945kky2j.js',
     '/public/material-static-945kky2j.min.js',
