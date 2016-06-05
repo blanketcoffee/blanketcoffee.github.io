@@ -9,7 +9,7 @@ categories: featured
 
 **Here is a list of all my favourite (and oh-so relatable) quotes from the novel Paper Towns by John Green❤️**
 
-![](http://lovelace-media.imgix.net/uploads/36/66f7ea80-11f4-0133-5082-0ec273752cbd.jpg?w=480&h=960&fit=max&auto=format&q=70)]
+![]()
 
 1. "She loved mysteries so much that she became one." (Tops the list, obviously. Jk, I like these all equally.)  
 
