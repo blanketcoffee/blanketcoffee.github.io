@@ -1,0 +1,40 @@
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }} 
+      </a>
+    </h1>
+    <span class="post-date">{{ post.date | date_to_string }}&nbsp;&nbsp;{{post.author}}</span>
+
+    {{ post.excerpt }}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            <a href="/{{ paginator.previous_page_path }}" class="previous">«</a>
+        {% else %}
+            <span class="previous hidden">«</span>
+        {% endif %}
+
+        <span class="page_number">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+        {% if paginator.next_page %}
+            <a href="https://abhisheksoni27.github.io{{ paginator.next_page_path }}" class="next">»</a>
+        {% else %}
+            <span class="next hidden">»</span>
+        {% endif %}
+    </div>
+{% endif %}
+</div>
+

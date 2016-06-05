@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<div class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date">{{ page.date | date_to_string }}&nbsp;&nbsp;{{page.author}}</span>
+    {% unless page.categories contains "featured" %}
+    {% include switch.html %}
+    {% endunless %}
+    {% include read-time.html %}
+    <br> {{ content }}
+</div>
+<div class="related">
+    <h2>Related Posts</h2>
+    <ul class="related-posts">
+        {% for post in site.related_posts limit:3 %}
+        <li>
+            <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+        </li>
+        {% endfor %}
+    </ul>
+    <script type="text/javascript">
+    const dbPromisePost = idb.open('article-offline', 1, upgradeDB => {
+        upgradeDB.createObjectStore('articles');
+    });
+
+    const keyValStorePost = {
+        get(key) {
+            return dbPromisePost.then(db => {
+                return db.transaction('articles')
+                    .objectStore('articles').get(key);
+            });
+        },
+        
+    };
+
+    function sendMessage(message) {
+        navigator.serviceWorker.controller.postMessage(message);
+    }
+    var saveForOffline = document.querySelector('#switch-1');
+    var checked = false;
+    keyValStorePost.get(window.location.pathname).then(res => {
+        if (res) {
+            document.querySelector('.mdl-js-switch').MaterialSwitch.on();
+        }
+    })
+    if (saveForOffline !== null) {
+        saveForOffline.addEventListener('click', function(e) {
+            checked = saveForOffline.checked;
+            console.log(checked);
+            if (checked) {
+                var send = {
+                    action: "cache",
+                    url: window.location.pathname
+                };
+                sendMessage(send);
+
+            } else {
+                var send = {
+                    action: "un-cache",
+                    url: window.location.pathname
+                };
+                sendMessage(send);
+            }
+
+        })
+    }
+    </script>
+</div>

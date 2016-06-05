@@ -1,0 +1,30 @@
+permalink:           'none'
+
+# Setup
+title:               Blanket Coffee
+tagline:             "Literature is love."
+description:         'A myriad of thoughts spilled into words.'
+url:                 https://blanketcoffee.github.io
+
+# About/contact
+author:
+  name:              Abhishek Soni
+  url:               https://twitter.com/abhisheksoni27
+  email:             abhisheksoni2720@gmail.com
+
+future:              true
+# Gems
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - certified
+  - jemoji
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
